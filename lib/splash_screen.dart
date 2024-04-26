@@ -55,6 +55,7 @@ class _SplashScreenState extends State<SplashScreen> {
                     style: GoogleFonts.openSans(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
+                      color: AppPallete.whiteColor,
                     )),
               ),
               const SizedBox(height: 40),
@@ -65,6 +66,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   style: GoogleFonts.openSans(
                     fontSize: 20,
                     fontWeight: FontWeight.w500,
+                    color: AppPallete.whiteColor,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -104,6 +106,7 @@ class _SplashScreenState extends State<SplashScreen> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
+                            color: AppPallete.whiteColor,
                           ),
                         ),
                       ),

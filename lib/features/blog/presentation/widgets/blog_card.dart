@@ -1,6 +1,9 @@
 import 'package:blog_app/core/utils/calculate_reading_time.dart';
 import 'package:blog_app/features/blog/domain/entities/blog.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../../../core/theme/app_pallete.dart';
 
 class BlogCard extends StatelessWidget {
   final Blog blog;
@@ -14,12 +17,13 @@ class BlogCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      
       margin: const EdgeInsets.all(16).copyWith(
         bottom: 4,
       ),
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
+
         color: color,
         borderRadius: BorderRadius.circular(10),
       ),
@@ -49,11 +53,13 @@ class BlogCard extends StatelessWidget {
                   blog.title,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 3,
-                  style: const TextStyle(
+                  style: GoogleFonts.openSans(
                     fontSize: 22,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
+                    color: AppPallete.whiteColor,
                   ),
                 ),
+                
               ),
             ],
           ),
@@ -63,7 +69,7 @@ class BlogCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('${calculateReadingTime(blog.content)} min'),
-                Text('Auther: ${blog.userName}'),
+                Text('Author: ${blog.userName}'),
               ],
             ),
           ),

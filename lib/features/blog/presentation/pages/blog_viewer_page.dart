@@ -5,6 +5,7 @@ import 'package:blog_app/core/utils/calculate_reading_time.dart';
 import 'package:blog_app/core/utils/format_date.dart';
 import 'package:blog_app/features/blog/domain/entities/blog.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
 class BlogViewerPage extends StatefulWidget {
@@ -34,7 +35,14 @@ class _BlogViewerPageState extends State<BlogViewerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Blog Viewer'),
+        title: Text(
+          'Blog Viewer',
+          style: GoogleFonts.openSans(
+            fontSize: 24,
+            fontWeight: FontWeight.w500,
+            color: AppPallete.whiteColor,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Scrollbar(
@@ -60,28 +68,27 @@ class _BlogViewerPageState extends State<BlogViewerPage> {
                 children: [
                   Text(
                     widget.blog.title,
-                    style: const TextStyle(
+                    style: GoogleFonts.openSans(
                       fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
+                      color: AppPallete.whiteColor,
                     ),
                   ),
                   const SizedBox(height: 20),
-                  Text(
-                    'By ${widget.blog.userName}',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                    ),
-                  ),
+                  Text('By ${widget.blog.userName}',
+                      style: GoogleFonts.openSans(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: AppPallete.whiteColor,
+                      )),
                   const SizedBox(height: 5),
                   Text(
-                    '${formatDateBydMMMYYYY(widget.blog.updatedAt)} . ${calculateReadingTime(widget.blog.content)} min',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: AppPallete.greyColor,
-                      fontSize: 16,
-                    ),
-                  ),
+                      '${formatDateBydMMMYYYY(widget.blog.updatedAt)} . ${calculateReadingTime(widget.blog.content)} min',
+                      style: GoogleFonts.openSans(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: AppPallete.greyColor,
+                      )),
                   const SizedBox(height: 20),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
@@ -101,21 +108,24 @@ class _BlogViewerPageState extends State<BlogViewerPage> {
                               );
                             },
                           )
-                        : const Text(
-                            "In offline mode no image available",
-                            style: TextStyle(
-                              color: AppPallete.greyColor,
+                        : Text("In offline mode no image available",
+                            style: GoogleFonts.openSans(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
-                            ),
-                          ),
+                              color: AppPallete.greyColor,
+                            )),
                   ),
                   const SizedBox(height: 20),
-                  Text(
-                    widget.blog.content,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      height: 2,
+                  Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: Text(
+                      widget.blog.content,
+                      style: GoogleFonts.openSans(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: AppPallete.whiteColor,
+                      ),
+                      textAlign: TextAlign.justify,
                     ),
                   )
                 ],
