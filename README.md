@@ -16,9 +16,9 @@ Welcome to Quill Pell, a Flutter blog application built with clean architecture 
 ## Diagram for Better Understanding
 ![Diagram for Better Understanding](./assets//image/diagram.png)
 
-## Demonstrations
+## Screen Shot 
 
-![Demos](./assets/image/demo.gif)
+![Demos](./assets/image/Quill Pell.png)
 
 ## Installation
 To get started with the Quill Pell Flutter application, follow these steps:
